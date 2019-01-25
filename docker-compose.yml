@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+  react-integration:
+    env_file: .env
+    build:
+      context: ./docker
+      labels:
+        maintainer: "Ervinne Sodusta <ervinne.sodusta@nuworks.ph>"
+    image: react-integration:latest
+    container_name: react-integration
+    volumes:
+      # host:container
+       - /var/www/vhost/app/react-integration:/var/www/vhost/app/react-integration
+    networks:
+       default:
+          ipv4_address: 192.168.13.23
+networks:
+  default:
+    external:
+      name: docker-bridge-local
