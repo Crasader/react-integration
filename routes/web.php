@@ -11,4 +11,6 @@
 |
 */
 
-Route::view('/{path?}', 'app');
+Route::get('/', 'ProfilePageController@index');
+Route::get('/client', 'ProfilePageController@jsRendered');
+// Route::view('/{path?}', 'app');

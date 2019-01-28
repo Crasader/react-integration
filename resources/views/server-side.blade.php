@@ -22,13 +22,13 @@
             <div id="page-wrapper" class="gray-bg">
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div id="app">
-                        {!! ssr('js/page-ssr.js')->render() !!}
+                        {!! ssr('js/page-ssr.js')->context(['profileSummary' => $profileSummary])->render() !!}
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+        {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 
         <!-- Legacy Scripts -->
         <script src="{{ asset('legacy/inspinia/js/jquery-2.1.1.js') }}"></script>
